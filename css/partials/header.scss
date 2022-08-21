@@ -1,0 +1,130 @@
+.mobile-menu {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 999;
+
+  @media screen and (min-width: $--lg) {
+    display: none;
+  }
+
+  .nav-menu {
+    right: -340px;
+    position: absolute;
+    top: 0;
+    background: $white-color;
+    z-index: -1;
+    padding: 100px 20px 20px;
+    width: 320px;
+    height: 100vh;
+    overflow: auto;
+    transition: 0.4s;
+
+    ul {
+      text-align: center;
+    }
+  }
+
+  &.active {
+    .burger {
+      background: $black-color;
+
+      .strip {
+        div {
+          background: $white-color;
+        }
+      }
+
+      .burger-strip {
+        transform: scale(0.7) rotate(45deg);
+        transition: all 0.25s ease 0.05s;
+
+        div {
+          &:first-child {
+            transform: translateY(8px) rotate(3deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:last-child {
+            transform: translateY(-8px) rotate(90deg);
+          }
+        }
+      }
+    }
+
+    .nav-menu {
+      right: 0
+    }
+  }
+}
+
+.burger {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: $burger-blue-color;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.5s ease;
+  margin: 5px 8px;
+
+  .strip {
+    div {
+      height: 2px;
+      border-radius: 2px;
+      background: $white-color;
+      margin: 6px;
+      transition: all 0.55s cubic-bezier(0.075, 0.82, 0.165, 1);
+      width: 34px;
+    }
+  }
+
+  .burger-strip {
+    div {
+      transition: all 0.65s cubic-bezier(0.075, 0.82, 0.165, 1)
+    }
+  }
+}
+
+.header-desktop {
+  padding: 20px 0;
+  background: $strong-black-color;
+
+  @media screen and (min-width: $--lg) {
+    padding: 52px 0;
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    a {
+      max-width: 150px;
+      display: inline-block;
+
+      @media screen and (min-width: $--lg) {
+        max-width: 254px;
+      }
+    }
+  }
+
+  .nav-menu {
+    display: none;
+
+    @media screen and (min-width: $--lg) {
+      display: block;
+    }
+  }
+}

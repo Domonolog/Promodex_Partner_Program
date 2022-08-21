@@ -1,0 +1,107 @@
+/* Animations -> text */
+
+.text-animations {
+  overflow: hidden;
+
+  .text-top {
+    position: relative;
+    height: 55px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $--lg) {
+      height: 112px;
+      margin-bottom: 17px;
+    }
+
+    span {
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 62px;
+      color: $strong-white-color;
+      white-space: nowrap;
+      position: absolute;
+      overflow: hidden;
+      animation-name: animation-left-text;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      -moz-animation-name: animation-left-text;
+      -moz-animation-duration: 10s;
+      -moz-animation-iteration-count: infinite;
+
+      @media screen and (min-width: $--lg) {
+        font-size: 100px;
+        line-height: 129px;
+      }
+    }
+  }
+
+  .text-bottom {
+    position: relative;
+    height: 55px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $--lg) {
+      height: 112px;
+      margin-bottom: 17px;
+    }
+
+    span {
+      font-family: $font-family-global;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 62px;
+      -webkit-text-stroke: 1px $strong-white-color;
+      white-space: nowrap;
+      position: absolute;
+      overflow: hidden;
+      animation-name: animation-right-text;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      -moz-animation-name: animation-right-text;
+      -moz-animation-duration: 10s;
+      -moz-animation-iteration-count: infinite;
+
+      @media screen and (min-width: $--lg) {
+        font-size: 100px;
+        line-height: 129px;
+      }
+
+      /* on firefox -webkit-text-stroke it breaks when animating into parts */
+      @-moz-document url-prefix() {
+        -webkit-text-stroke: 0 $brown-color;
+        color: $brown-color;
+      }
+    }
+  }
+
+  @keyframes animation-left-text {
+    0% {
+      left: 0;
+    }
+
+    90% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0;
+    }
+  }
+
+  @keyframes animation-right-text {
+    0% {
+      left: -100%;
+    }
+
+    90% {
+      left: 0;
+    }
+
+    100% {
+      left: -100%;
+    }
+  }
+}

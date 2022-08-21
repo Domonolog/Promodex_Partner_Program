@@ -1,0 +1,103 @@
+.footer {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background: $black-color;
+
+  @media screen and (min-width: $--lg) {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .left {
+      width: 100%;
+
+      @media screen and (min-width: $--sm) {
+        width: 50%;
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 60px;
+        color: $white-color;
+        margin-bottom: 0;
+
+        @media screen and (min-width: $--xxl) {
+          font-size: 69px;
+          line-height: 89px;
+        }
+      }
+
+      .sub-title {
+        font-weight: 500;
+        font-size: 65px;
+        line-height: 80px;
+        color: $black-color;
+        -webkit-text-stroke: 2px $strong-brown-color;
+        margin-bottom: 19px;
+
+        @media screen and (min-width: $--xxl) {
+          font-size: 100px;
+          line-height: 129px;
+        }
+      }
+    }
+
+    .right {
+      padding-top: 16px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media screen and (min-width: $--sm) {
+        width: 50%;
+        justify-content: flex-end;
+      }
+
+      .circle {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 30px;
+        width: 228px;
+        height: 228px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-decoration: none;
+        transition: 0.4s;
+
+        @media screen and (min-width: $--sm) {
+          margin-bottom: -12px;
+        }
+
+        &:hover {
+          color: $light-blue-color;
+        }
+      }
+    }
+  }
+
+  .links {
+    .btn-rgba {
+      margin-right: 35px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+
+      @media screen and (min-width: $--xxl) {
+        padding: 29px 40px;
+      }
+    }
+  }
+}
